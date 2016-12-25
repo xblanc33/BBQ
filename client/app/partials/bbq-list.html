@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    There are {{recipes.length}} recipes
+    <pre> {{recipes}} </pre>
+
+    <div>
+      <form ng-model="newRecip">
+        Name: <input type="text" ng-model="newRecip.name"/>
+        Description: <input type="text" ng-model="newRecip.description"/>
+        <button ng-click="add(newRecip)">SAVE</button>
+      </form>
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul>
+        <li ng-repeat="recipe in recipes">
+          <a href="#/recipes/{{recipe._id}}">{{recipe.name}}</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
